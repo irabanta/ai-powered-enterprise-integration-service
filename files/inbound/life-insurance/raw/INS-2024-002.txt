@@ -1,0 +1,11 @@
+Insurance Policy Details
+Policy Holder: Jane Doe
+Sex: Female
+Born: March 15, 1990
+Social Security: 987-65-4321
+Policy ID: INS-2024-002
+Coverage: Auto Insurance
+Monthly Premium: $180.00
+Current Status: Active
+Start Date: February 1, 2024
+End Date: February 1, 2025

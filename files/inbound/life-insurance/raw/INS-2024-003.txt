@@ -1,0 +1,11 @@
+POLICY INFORMATION RECORD
+Insured Person: Robert Johnson
+Gender: M
+DOB: 07/22/1978
+SSN: 456-78-9123
+Policy Reference: INS-2024-003
+Insurance Type: Home Insurance
+Premium Amount: 320.00
+Policy Status: Active
+Effective From: 03/01/2024
+Valid Until: 03/01/2025

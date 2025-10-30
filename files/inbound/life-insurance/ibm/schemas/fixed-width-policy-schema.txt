@@ -1,0 +1,82 @@
+** IBM COBOL Fixed Width Format - Insurance Policy Data for Life or Annuity **
+** Field Layout: Position-based data structure **
+** Total Record Length: 200 characters **
+**
+** Field Definitions:
+** SSN              : Pos 001-004 (4 chars)
+** Policy Number    : Pos 005-014 (10 chars)
+** First Name       : Pos 015-034 (20 chars)
+** Last Name        : Pos 035-054 (20 chars)
+** Date of Birth    : Pos 055-062 (8 chars)
+** Zip Code         : Pos 063-067 (5 chars)
+** Annual Salary    : Pos 068-077 (10 chars)
+** Min Years Invest : Pos 078-079 (2 chars)
+** Email            : Pos 080-129 (50 chars)
+** Phone            : Pos 130-144 (15 chars)
+** Mailing Addr1    : Pos 145-174 (30 chars)
+** Mailing Addr2    : Pos 175-184 (10 chars)
+** Mailing Addr3    : Pos 185-194 (10 chars)
+** Country Code     : Pos 195-196 (2 chars)
+** Country Name     : Pos 197-198 (2 chars - abbreviated)
+**
+** POLICY RECORD - Fixed Width Format (300 chars) **
+** Policy ID        : Pos 001-003 (3 chars)
+** Policy Number    : Pos 004-013 (10 chars)
+** Policy Type      : Pos 014-033 (20 chars)
+** Product Type     : Pos 034-043 (10 chars)
+** Policy Status    : Pos 044-053 (10 chars)
+** Anniversary Date : Pos 054-061 (8 chars)
+** Premium          : Pos 062-071 (10 chars)
+** Dividend         : Pos 072-076 (5 chars)
+** Death Benefit    : Pos 077-084 (8 chars)
+** Outstanding Loan : Pos 085-089 (5 chars)
+** Net Cash Value   : Pos 090-096 (7 chars)
+** Account Value    : Pos 097-103 (7 chars)
+** Surrender Value  : Pos 104-110 (7 chars)
+** Surrender Fee    : Pos 111-115 (5 chars)
+** Face Amount      : Pos 116-123 (8 chars)
+** Avail Loan Val   : Pos 124-128 (5 chars)
+** Mode of Payment  : Pos 129-138 (10 chars)
+** Withdrawal Taken : Pos 139-143 (5 chars)
+** Issue Date       : Pos 144-151 (8 chars)
+** Issue State      : Pos 152-161 (10 chars)
+** Child Rider      : Pos 162-164 (3 chars)
+** Waiver Premium   : Pos 165-167 (3 chars)
+** Waiver Coverage  : Pos 168-173 (6 chars)
+** Cola Coverage    : Pos 174-180 (7 chars)
+** Underwriting     : Pos 181-190 (10 chars)
+** Premium Due Date : Pos 191-198 (8 chars)
+** Annual Income    : Pos 199-205 (7 chars)
+** Payor           : Pos 206-215 (10 chars)
+** Total Loan Bal   : Pos 216-220 (5 chars)
+** Avail Loan Cash  : Pos 221-226 (6 chars)
+** Cash Borrow %    : Pos 227-231 (5 chars)
+** Loan Int Rate    : Pos 232-236 (5 chars)
+** Premium Freq     : Pos 237-249 (13 chars)
+** Renewal Date     : Pos 250-257 (8 chars)
+** Maturity Date    : Pos 258-265 (8 chars)
+** Annual Premium   : Pos 266-275 (10 chars)
+** Premium Paid To  : Pos 276-283 (8 chars)
+** Paid Status      : Pos 284-288 (5 chars)
+**
+** PRIMARY BENEFICIARY 1 - Fixed Width Format (200 chars) **
+** First Name       : Pos 001-020 (20 chars)
+** Last Name        : Pos 021-040 (20 chars)
+** Relationship     : Pos 041-050 (10 chars)
+** Birth Date       : Pos 051-058 (8 chars)
+** Percentage       : Pos 059-061 (3 chars)
+** SSN              : Pos 062-065 (4 chars)
+** Address          : Pos 066-095 (30 chars)
+** City             : Pos 096-105 (10 chars)
+** State            : Pos 106-107 (2 chars)
+** Zip Code         : Pos 108-112 (5 chars)
+** Phone            : Pos 113-124 (12 chars)
+** Email            : Pos 125-174 (50 chars)
+** Remaining        : Pos 175-198 (24 chars - padding)
+**
+** PRIMARY BENEFICIARY 2 - Fixed Width Format (200 chars) **
+**
+** CONTINGENT BENEFICIARY 1 - Fixed Width Format (200 chars) **
+**
+** CONTINGENT BENEFICIARY 2 (ROBERT) - Fixed Width Format (200 chars) **
+**                 

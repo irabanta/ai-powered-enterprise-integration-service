@@ -1,0 +1,16 @@
+6577FIA653487 John                Williams               2021022399501000003500025irabanta@gmail.com      +1801-920-3727 2090 MARINA AVE,,NORTH STREET,          PETALUMA CA+1US
+002TL6534868 Life Policy         Term Life In-Force    20190305000000265000500000500018000022650029150026650025000050000003000000Annual    010000  20180305Minnesota No Yes100000020000000Standard    20310311013500John Doe  0700002500003.253.50%Semi-Annual    2025010220270305000000265  20240305True
+John                Coe                 Father    12/25/198880 66312090 Marina AVE               Petaluma  CA95954971-201-2090 john.doe@umbrella.com                    
+Mike                Coe                 Brother   11/25/201520 66322090 Marina AVE               Petaluma  CA95954971-201-2090 mike.doe@umbrella.com                    
+Jack                Coe                 Uncle     1998102010066332020
+90 Marina AVE               Petaluma  CA95954971-201-2090 jack.doe@umbrella.com                    
+001VA6534866 Annuity Policy      Variable Annuity  20200501IN-Force    20200000002500008000080000008500000788325006500000300000Annual    010000  20230501Delaware  No Yes100000Yes100000  20241107012000John Doe  0200002500002.503.50%Quarterly 0000000000True                                      
+John                Doe                 Father      1988122550 66312090 Marina AVE               Petaluma  CA95954971-201-2090 john.doe@umbrella.com                    
+Mike                Doe                 Brother     2015112550 66322090 Marina AVE               Petaluma  CA95954971-201-2090 mike.doe@umbrella.com                    
+Jack                Doe                 Uncle       1998102050 66332090 Marina AVE               Petaluma  CA95954971-201-2090 jack.doe@umbrella.com                    
+Alice               Doe                 Aunt        2004022150 66342090 Marina AVE               Petaluma  CA95954971-201-2090 alice.doe@umbrella.com                   
+002TL6534867 Life Policy         Term Life Surrendered    20210501000000623000500065000000000062501500012250025000065000003000000Annual    010000  20230501Florida   No Yes100000020000000Preferred Plus   20261107000000John Doe  0200002500002.503.50%Semi-Annual   20240112  20290501000000623  20210501True 
+John                Doe                 Father        1988122580 66312090 Marina AVE               Petaluma  CA95954971-201-2090 john.doe@umbrella.com                    
+Mike                Doe                 Brother       2015112520 66322090 Marina AVE               Petaluma  CA95954971-201-2090 mike.doe@umbrella.com                    
+Jack                Doe                 Uncle       19981020100663320
+90 Marina AVE               Petaluma  CA95954971-201-2090 jack.doe@umbrella.com                    

@@ -1,0 +1,11 @@
+Policy Holder Information:
+Name: John Smith
+Gender: Male
+Date of Birth: December 25, 1985
+SSN: 123-45-6789
+Policy Number: INS-2024-001
+Policy Type: Life Insurance
+Premium: $250.00
+Status: Active
+Effective Date: January 1, 2024
+Expiration Date: January 1, 2025
