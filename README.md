@@ -27,7 +27,7 @@ This enterprise integration solution demonstrates the power of **Generative AI**
 - � **Multi-Format Support**: Processes both unstructured text and IBM COBOL fixed-width format files
 - �🔄 **Intelligent Transformation**: Converts diverse data formats to standardized JSON using natural language processing
 - 📁 **File-Based Integration**: Monitors input directories and processes files automatically via Apache Camel
-- 🌐 **Multi-Model AI Support**: Supports multiple Azure AI models (GPT-4.1 Nano, GPT-4.1 MyAgent, GPT-5 Mini2, DeepSeek-R1)
+- 🌐 **Multi-Model AI Support**: Supports multiple Azure AI models (GPT-4.1 Nano, GPT-4.1 , GPT-5 Mini2, DeepSeek-R1)
 - 🔗 **RESTful API**: Provides endpoints for real-time policy data retrieval by policy number
 - 📂 **Dynamic File Processing**: Reads policy files from configurable directories with intelligent caching
 - ⚡ **Real-time Processing**: Immediate processing of incoming files and API requests
@@ -36,38 +36,66 @@ This enterprise integration solution demonstrates the power of **Generative AI**
 - 🧠 **Smart Prompting**: Specialized AI prompts optimized for different data types and processing scenarios
 - 🚀 **Performance Optimizations**: Intelligent caching with TTL, timeout handling, and connection pooling
 
-## Architecture
+## REST API Architecture Diagram: The REST API fetch fixed-width policy data, ETL by AI, and returns JSON response with caching
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────────┐
-│                          AI-Powered Enterprise Integration Service                   │
-└─────────────────────────────────────────────────────────────────────────────────────┘
-                                           │
-                                           ▼
-┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Input Files   │───▶│  Apache Camel    │───▶│  Azure OpenAI   │───▶│  Output Files   │
-│  files/inbound/ │    │  Integration     │    │   Multi-Model   │    │ files/outbound/ │
-│  - Life Ins.    │    │     Layer        │    │   - GPT-4.1     │    │  - Processed    │
-│  - Auto Ins.    │    │  - File Monitor  │    │   - GPT-5       │    │  - JSON Format  │
-│  - IBM COBOL    │    │  - ETL Service   │    │   - DeepSeek-R1 │    │  - Structured   │
-└─────────────────┘    └──────────────────┘    └─────────────────┘    └─────────────────┘
-                              │                          │
-                              ▼                          ▼
-┌─────────────────┐    ┌──────────────┐         ┌─────────────────┐
-│  REST API       │───▶│ Spring Boot  │         │ JSON Response   │
-│ /policy/{id}    │    │ Application  │         │ Processing &    │
-│ /ibm/policy/{id}│    │ - Port 9081  │         │ Caching System  │
-│ - Caching       │    │ - Netty HTTP │         │                 │
-│ - Performance   │    │ - Real-time  │         │                 │
-└─────────────────┘    └──────────────┘         └─────────────────┘
-                       ┌──────────────┐
-                       │ Policy Files │
-                       │ samples/     │
-                       │  policies/   │
-                       │   ├welcome/  │
-                       │   └ibm/      │
-                       └──────────────┘
+┌─────────────────────────────────────────────────────────────────────┐
+│                         REST API (netty/http endpoints)             │
+└─────────────────────────────────────────────────────────────────────┘
+                                  │
+                                  ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                      Spring Boot Application                        │
+│              (IntegrationsRoute, DemoMainApplication)               │
+└─────────────────────────────────────────────────────────────────────┘
+                                  │
+                                  ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                              Policy Files                            │
+│                (files/inbound/* , files/inbound/ibm/*)               │
+└─────────────────────────────────────────────────────────────────────┘
+                                  │
+                                  ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                          ETL by AI (Azure OpenAI)                    │
+│                 (AzureOpenAIUtils + AIPromptConstants)              │
+└─────────────────────────────────────────────────────────────────────┘
+                                  │
+                                  ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                   JSON Response & Caching (30-min TTL)              │
+│               (API returns JSON and caches IBM responses)           │
+└─────────────────────────────────────────────────────────────────────┘
 ```
+
+## FILE ETL Architecture Diagram
+
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│                    File Monitor / ETL (Batch)                      │
+└─────────────────────────────────────────────────────────────────────┘
+                                  │
+                                  ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                  InsuranceFilesEtlService (Apache Camel)            │
+│        - Watches `files/inbound/*` for new policy files (raw)       │
+└─────────────────────────────────────────────────────────────────────┘
+                                  │
+                                  ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                          ETL by AI (Azure OpenAI)                   │
+│               (AzureOpenAIUtils + AIPromptConstants)               │
+└─────────────────────────────────────────────────────────────────────┘
+                                  │
+                                  ▼
+┌─────────────────────────────────────────────────────────────────────┐
+│                            Output Files                             │
+│                       `files/outbound/*` (processed)                │
+└─────────────────────────────────────────────────────────────────────┘
+```
+
+Note: This "FILE ETL Architecture Diagram" documents the batch/file-driven ETL flow. The REST API architecture above remains unchanged and is used for on-demand policy lookups and cached responses.
+
 
 ## Technologies Used
 
@@ -78,7 +106,7 @@ This enterprise integration solution demonstrates the power of **Generative AI**
 
 ### AI & Machine Learning
 - **Azure OpenAI Service** - Multiple model support:
-  - **GPT-4.1 MyAgent** (Primary) - Best performance for complex policy data
+  - **GPT-4.1 ** (Primary) - Best performance for complex policy data
   - **GPT-4.1 Nano** - Optimized for speed and efficiency
   - **GPT-5 Mini2** - Advanced language understanding
   - **DeepSeek-R1** - Alternative AI model for specialized tasks
@@ -254,7 +282,7 @@ curl -X GET "http://localhost:9081/ibm/policy/FIA653487"
 - **Git** for version control
 
 ### Environment Variables
-Set the following environment variable:
+Set the following environment variable: At present, only Azure Deployed Models are supported. Will add support for OpenAI hosted models in future releases.
 ```bash
 export AZURE_OPENAI_API_KEY="your-azure-openai-api-key"
 ```
@@ -352,7 +380,7 @@ Complex fixed-width format with comprehensive policy details, beneficiary inform
 ## AI Models & Prompts
 
 ### Supported Models
-1. **GPT-4.1 MyAgent** (Default) - Best overall performance
+1. **GPT-4.1 ** (Default) - Best overall performance
 2. **GPT-4.1 Nano** - Speed-optimized for high-volume processing
 3. **GPT-5 Mini2** - Advanced language understanding
 4. **DeepSeek-R1** - Alternative specialized model
