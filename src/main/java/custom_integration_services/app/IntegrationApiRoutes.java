@@ -24,7 +24,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 @Component
-public class IntegrationsRoute extends RouteBuilder {
+public class IntegrationApiRoutes extends RouteBuilder {
     @Value("${insurance.life.ibm.raw.inbound.source.directory}")
     private String lifeInsuranceInboundIbmDirectory;
 

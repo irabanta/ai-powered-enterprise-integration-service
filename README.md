@@ -36,7 +36,7 @@ This enterprise integration solution demonstrates the power of **Generative AI**
 - 🧠 **Smart Prompting**: Specialized AI prompts optimized for different data types and processing scenarios
 - 🚀 **Performance Optimizations**: Intelligent caching with TTL, timeout handling, and connection pooling
 
-## REST API Architecture Diagram: The REST API fetch fixed-width policy data, ETL by AI, and returns JSON response with caching
+## REST API Architecture Diagram:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
@@ -46,7 +46,7 @@ This enterprise integration solution demonstrates the power of **Generative AI**
                                   ▼
 ┌─────────────────────────────────────────────────────────────────────┐
 │                      Spring Boot Application                        │
-│              (IntegrationsRoute, DemoMainApplication)               │
+│              (IntegrationApiRoutes, MainApplication)               │
 └─────────────────────────────────────────────────────────────────────┘
                                   │
                                   ▼
@@ -136,9 +136,9 @@ ai-powered-enterprise-integration-service/
 │   ├── main/
 │   │   ├── java/custom_integration_services/
 │   │   │   ├── app/
-│   │   │   │   ├── DemoMainApplication.java           # Spring Boot main application
+│   │   │   │   ├── MainApplication.java           # Spring Boot main application
 │   │   │   │   ├── InsuranceFilesEtlService.java      # File-based ETL processing service
-│   │   │   │   └── IntegrationsRoute.java             # REST API and routing configuration
+│   │   │   │   └── IntegrationApiRoutes.java             # REST API and routing configuration
 │   │   │   ├── components/
 │   │   │   │   └── AzureOpenAIUtils.java              # Azure OpenAI integration utilities
 │   │   │   └── constants/
@@ -175,9 +175,9 @@ ai-powered-enterprise-integration-service/
 
 ## Core Components
 
-### 1. DemoMainApplication
+### 1. MainApplication
 - **Purpose**: Spring Boot application entry point
-- **Location**: `src/main/java/custom_integration_services/app/DemoMainApplication.java`
+- **Location**: `src/main/java/custom_integration_services/app/MainApplication.java`
 - **Functionality**: Bootstraps the entire application with Spring Boot auto-configuration
 
 ### 2. InsuranceFilesEtlService
@@ -189,9 +189,9 @@ ai-powered-enterprise-integration-service/
   - Transforms unstructured policy data to JSON using Azure OpenAI
   - Saves processed results to `files/outbound/life-insurance/processed/`
 
-### 3. IntegrationsRoute
+### 3. IntegrationApiRoutes
 - **Purpose**: REST API endpoints and advanced routing logic
-- **Location**: `src/main/java/custom_integration_services/app/IntegrationsRoute.java`
+- **Location**: `src/main/java/custom_integration_services/app/IntegrationApiRoutes.java`
 - **API Endpoints**:
   - `GET /policy/{policyNumber}` - Retrieve general policy information
   - `GET /ibm/policy/{policyNumber}` - Retrieve IBM COBOL format policy data

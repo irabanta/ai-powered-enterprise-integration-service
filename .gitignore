@@ -1,3 +1,6 @@
+files/outbound/life-insurance/processed/
+files/outbound/auto-insurance/processed/
+
 HELP.md
 target/
 .mvn/wrapper/maven-wrapper.jar
