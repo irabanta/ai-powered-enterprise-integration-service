@@ -1,3 +1,5 @@
+# ![AI-Powered Enterprise Integration Service Banner](banners/irabanta-enterprise-integration-ai-github-repo.png)
+
 # AI-Powered Enterprise Integration Service
 
 An intelligent data processing system that leverages Azure OpenAI for automated extraction and transformation of insurance policy data from various formats including unstructured text and IBM COBOL fixed-width files.
@@ -17,6 +19,9 @@ An intelligent data processing system that leverages Azure OpenAI for automated 
 - [Performance Features](#performance-features)
 - [Development](#development)
 - [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [License](#license)
+- [What Next?](#what-next)
 
 ## Overview
 
