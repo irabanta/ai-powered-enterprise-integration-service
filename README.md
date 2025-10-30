@@ -50,8 +50,9 @@ This enterprise integration solution demonstrates the power of **Generative AI**
                                   │
                                   ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                      Spring Boot Application                        │
-│              (IntegrationApiRoutes, MainApplication)               │
+│                      Enterprise Integration Service                 |
+|              (Apache Camel, Spring Boot Application)                │
+│              (IntegrationApiRoutes, MainApplication)                │
 └─────────────────────────────────────────────────────────────────────┘
                                   │
                                   ▼
@@ -82,14 +83,16 @@ This enterprise integration solution demonstrates the power of **Generative AI**
                                   │
                                   ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                  InsuranceFilesEtlService (Apache Camel)            │
+│                  Enterprise Integration Service                     |
+|              - InsuranceFilesEtlService (Apache Camel)              │
 │        - Watches `files/inbound/*` for new policy files (raw)       │
 └─────────────────────────────────────────────────────────────────────┘
                                   │
                                   ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                          ETL by AI (Azure OpenAI)                   │
-│               (AzureOpenAIUtils + AIPromptConstants)               │
+│                          Extract Transformation                     |
+|                            by AI (Azure OpenAI)                     │
+│               (AzureOpenAIUtils + AIPromptConstants)                │
 └─────────────────────────────────────────────────────────────────────┘
                                   │
                                   ▼
