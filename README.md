@@ -483,3 +483,31 @@ This project is for demonstration purposes and internal use only.
 *Generated on: December 2024*  
 *Version: 2.0.0*  
 *Author: Enterprise Integration Team*
+
+## What Next?
+
+This PoC demonstrates AI-driven extraction and transformation for insurance policy data. The next phase is to develop a full integration service that connects to enterprise data sources and serves a portal. Target sources include:
+
+- Dynamics CRM
+- Salesforce
+- Mainframe systems via IBM MQ
+- SQL Server (on-premises and cloud-hosted databases)
+
+Goals for the next phase:
+
+- Use apache camel's inbuilt connectors/adapters or build to ingest data from the sources above and normalize inputs for the AI ETL pipeline.
+- Validate the AI-powered extraction and transformation at scale so the portal can fetch accurate, structured policy data in real time.
+- Replace brittle, hand-written transformation code with AI-driven mapping and normalization rules, drastically reducing custom transformation maintenance.
+
+Why this PoC is a prerequisite:
+
+- It verifies the accuracy and reliability of AI-based extraction and transformation before investing in source-specific connectors and portal features.
+- It provides a repeatable testbed to tune prompts, model selection, and error handling so production connectors emit clean, consistent JSON payloads.
+
+Next steps (short-term):
+
+1. Define connector contracts (data shape, authentication, polling vs. webhook) for Dynamics CRM, Salesforce, and SQL Server.
+2. Integrate a single connector (e.g., Dynamics CRM) and route ingested records through the PoC AI ETL flow for validation.
+3. Expand to other sources and build the portal API that queries the normalized JSON outputs.
+
+By following this path, the PoC will evolve from a file-focused ETL demo into a production-ready integration platform where AI eliminates much of the manual transformation codebase.
