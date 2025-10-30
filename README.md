@@ -506,6 +506,10 @@ Goals for the next phase:
 - Use apache camel's inbuilt connectors/adapters or build to ingest data from the sources above and normalize inputs for the AI ETL pipeline.
 - Validate the AI-powered extraction and transformation at scale so the portal can fetch accurate, structured policy data in real time.
 - Replace brittle, hand-written transformation code with AI-driven mapping and normalization rules, drastically reducing custom transformation maintenance.
+- Data Security, Cybersecurity, Complaince, AI Guardrails, AI Governance
+- Fine-tuning models, Evluation, Deployment, Monitoring
+- System admin portal, configurations, settings
+- Customer and Agent Portals development to showcase the benefits
 
 Why this PoC is a prerequisite:
 
